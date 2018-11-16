@@ -1,13 +1,25 @@
+let shallow = require('enzyme/shallow'),
+    GuineaPigs = require('../components/GuineaPigs').GuineaPigs;
+ 
 describe('', function () {
-    it("Make sure that GuineaPigsContainer.js is in a folder named containers, and that that folder is neighbors with the components folder.", function () {
-      
-      var correctPath = true;
-  
-          try {
-            require('../containers/GuineaPigsContainer.js');
-          } catch (e) {
-            correctPath = false;
-          }
-      expect(correctPath).to.equal(true);
-    });
+  it("GuineaPigs should have a render function, but no other properties", function () {
+  	let wrapper = shallow(
+  		<GuineaPigs guineaPig={{
+  			saying: 'fred',
+  			path: 'bed'
+  		}} />
+  	),
+  		instance = wrapper.instance();
+
+  	[
+  		'getInitialState',
+  		'nextGuinea',
+  		'interval',
+  		'componentDidMount',
+  		'componentWillUnmount'
+  	].forEach(function (prop) {
+  		expect(instance[prop]).to.not.exist;
+  	});
+  	expect(typeof instance.render).to.equal('function');
   });
+});
