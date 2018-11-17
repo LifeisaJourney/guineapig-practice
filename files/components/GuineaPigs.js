@@ -3,7 +3,8 @@ import React from 'react';
 class GuineaPigs extends React.Component {
   
   render() {
-    let src = GUINEAPATHS[this.state.currentGP];
+    const src = this.props.src;
+    
     return (
       <div>
         <h1>Cute Guinea Pigs</h1>
@@ -12,8 +13,3 @@ class GuineaPigs extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <GuineaPigs />,
-  document.getElementById('app')
-);

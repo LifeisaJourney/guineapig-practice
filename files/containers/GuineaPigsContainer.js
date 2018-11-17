@@ -35,12 +35,12 @@ class GuineaPigsContainer extends React.Component {
   }
 
   render() {
-    // let src = GUINEAPATHS[this.state.currentGP];
-    return <GuineaPigs />
+    let src = GUINEAPATHS[this.state.currentGP];
+    return <GuineaPigs src={src}/>
   }
 }
 
 ReactDOM.render(
-  <GuineaPigsContainer src={src} />,
+  <GuineaPigsContainer />,
   document.getElementById('app')
 );
