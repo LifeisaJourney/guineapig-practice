@@ -1,6 +1,6 @@
 import React from 'react';
 
-class GuineaPigs extends React.Component {
+export class GuineaPigs extends React.Component {
   
   render() {
     const src = this.props.src;
